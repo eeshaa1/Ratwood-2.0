@@ -1,5 +1,5 @@
 //Gronnic Itinerant is a combination subclass.
-//A choice between polearms and ranged.
+//A choice between polearms and ranged, plus axes and knives for both.
 /datum/advclass/foreigner/gronn
 	name = "Gronnic Itinerant"
 	tutorial = "Whether separated from your clan, or otherwise cast aside? You've found your way to Ferentia. \
@@ -9,7 +9,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/gronnic
 	subclass_languages = list(/datum/language/gronnic)
 	cmode_music = 'sound/music/combat_gronn.ogg'
-	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_MEDIUMARMOR)
+	traits_applied = list(TRAIT_STEELHEARTED)
 	subclass_stats = list(
 		STATKEY_WIL = 2,
 		STATKEY_INT = -1,
@@ -58,7 +58,7 @@
 				H.change_stat(STATKEY_STR, 3)
 				H.change_stat(STATKEY_INT, -2)
 				//The rest.
-				ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
+				ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			if("Archer")
 				//Equipment
 				head = /obj/item/clothing/head/roguetown/hatfur
@@ -70,6 +70,8 @@
 				H.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE)
 				H.change_stat(STATKEY_PER, 3)
 				H.change_stat(STATKEY_STR, 2)
+				//The rest.
+				ADD_TRAIT(TRAIT_DODGEEXPERT)
 
 	H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 
